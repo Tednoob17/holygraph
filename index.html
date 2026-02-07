@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HolyGraph - Project Visualization</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset='utf-8'>
+    <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0' name='viewport'>
+    <meta content='yes' name='mobile-web-app-capable'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='translucent-black' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='HolyGraph 42' name='apple-mobile-web-app-title'>
+    <meta content='on' http-equiv='cleartype'>
+    <title>HolyGraph - 42 Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .deprecated {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+    </style>
+    <script>
+        (function() {
+            this._user = {
+                "login": "nadoho",
+                "id": 239010,
+                "url": ""
+            };
+            this._consumer_address = '';
+        }).call(this);
+    </script>
+    <script>
+        (function() {
+            this._environment = "local";
+            this._git_commit = "";
+            this._release = this._git_commit;
+        }).call(this);
+    </script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>HolyGraph</h1>
-            <p>Visualize your projects in graph form</p>
-        </header>
-
-        <div class="input-section">
-            <h2>Enter Your Information</h2>
-            <form id="user-form">
-                <div class="form-group">
-                    <label for="username">Username/Login:</label>
-                    <input type="text" id="username" name="username" placeholder="e.g., nadoho" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="cursus_id">Cursus ID:</label>
-                    <input type="text" id="cursus_id" name="cursus_id" placeholder="e.g., 21" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="campus_id">Campus ID:</label>
-                    <input type="text" id="campus_id" name="campus_id" placeholder="e.g., 1" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="api_url">API URL (optional):</label>
-                    <input type="url" id="api_url" name="api_url" placeholder="https://projects.intra.42.fr/project_data.json" value="https://projects.intra.42.fr/project_data.json">
-                </div>
-
-                <button type="submit" class="btn-primary">Generate Graph</button>
-            </form>
-        </div>
-
-        <div class="graph-section" id="graph-section" style="display: none;">
-            <h2>Your Project Graph</h2>
-            <div class="graph-info">
-                <p><strong>User:</strong> <span id="display-username"></span></p>
-                <p><strong>Cursus ID:</strong> <span id="display-cursus"></span></p>
-                <p><strong>Campus ID:</strong> <span id="display-campus"></span></p>
-                <p><strong>Fetch URL:</strong> <span id="display-url"></span></p>
-            </div>
-            <canvas class="graph-canvas" id="view" style="user-select: none;"></canvas>
-            <button class="btn-secondary" id="reset-btn">Enter New Information</button>
-        </div>
+    <div class="graph-container">
+        <canvas class="graph-canvas" id="view" 
+                data-fetch-url="project_data.json" 
+                data-quest="42cursus"
+                style="user-select: none;">
+        </canvas>
     </div>
 
-    <script src="script.js"></script>
+    <script src="holygraph.js"></script>
 </body>
 </html>

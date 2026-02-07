@@ -1,0 +1,29 @@
+function anonymous(_
+) {
+//# sourceURL=lodash.templateSources[1]
+return function(obj) {
+obj || (obj = {});
+var __t, __p = '';
+with (obj) {
+__p += '\n<div class="header">\n<a href="/projects/' +
+((__t = ( slug )) == null ? '' : __t) +
+'">' +
+((__t = ( name )) == null ? '' : __t) +
+'</a>\n<span class="' +
+((__t = ( state )) == null ? '' : __t) +
+' pull-right"> ' +
+((__t = ( final_mark )) == null ? '' : __t) +
+' </span>\n</div>\n<div class="content">\n' +
+((__t = ( duration == null ? "" : duration )) == null ? '' : __t) +
+'</br>\n</div>\n<div class="description content">\n' +
+((__t = ( description )) == null ? '' : __t) +
+'\n</div>\n<div class="content ' +
+((__t = ( (state == 'unavailable' || state == 'not_recommended') ? '' : 'hidden' )) == null ? '' : __t) +
+'">\n' +
+((__t = ( rules )) == null ? '' : __t) +
+'\n</div>\n';
+
+}
+return __p
+}
+}
