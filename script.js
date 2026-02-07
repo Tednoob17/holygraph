@@ -156,9 +156,6 @@ function drawNode(ctx, x, y, radius, label, color) {
 window.addEventListener('resize', function() {
     if (graphSection.style.display !== 'none') {
         const container = canvas.parentElement;
-        const oldWidth = canvas.width;
-        const oldHeight = canvas.height;
-        
         canvas.width = container.offsetWidth - 4;
         
         // Redraw the graph after resize
